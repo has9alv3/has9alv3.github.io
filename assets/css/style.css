@@ -7,6 +7,12 @@
  * copyright 2022 @codewithsadee
  */
 
+/* Set the height of images with the class "logo-img" to 24 pixels */
+.logo-img {
+  height: 30px;
+  /* Automatically adjust the width to maintain aspect ratio */
+  width: auto;
+}
 
 
 /*-----------------------------------*\
