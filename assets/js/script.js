@@ -26,6 +26,7 @@ const overlay = document.querySelector("[data-overlay]");
 const modalImg = document.querySelector("[data-modal-img]");
 const modalTitle = document.querySelector("[data-modal-title]");
 const modalText = document.querySelector("[data-modal-text]");
+const modalTime = document.querySelector("[data-modal-time]");
 
 // modal toggle function
 const testimonialsModalFunc = function () {
@@ -42,7 +43,19 @@ for (let i = 0; i < testimonialsItem.length; i++) {
     modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
     modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
     modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
-
+    /*
+    switch (modalTitle.innerHTML){
+      case "SW마이스터고 연합해커톤":
+        modalTime.innerHTML = "Oct 5 ~ 7, 2022";
+        break;
+      case "STA+C 2022 생활정보부문":
+        modalTime.innerHTML = "Sep 20 ~ Oct 29, 2022"
+        break;
+      case "제 20회 앱잼(APPJAM)":
+        modalTime.innerHTML = "Dec 18 ~ 19, 2021"
+        break;
+    }
+    */
     testimonialsModalFunc();
 
   });
@@ -173,12 +186,24 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
 // CUstomized
 
-//for up down of chevron icon
+// For up down of chevron icon
 const btn = document.querySelector('.info_more-btn');
 
 btn.addEventListener('click', function() {
   this.classList.toggle('up');
 });
+
+const button = document.getElementById("contact-btn");
+const span = button.querySelector("span");
+
+button.addEventListener("click", () => {
+  if (span.innerText === "Show Contacts") {
+    span.innerText = "Hide Contacts";
+  } else {
+    span.innerText = "Show Contacts";
+  }
+});
+
 
 
 // For Instagram
