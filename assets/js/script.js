@@ -208,42 +208,51 @@ button.addEventListener("click", () => {
 
 // For Instagram
 function redirectToInstagram() {
-              var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-              var instagramUrl = "https://www.instagram.com/has9alv3/";
-              if (isMobile) {
-                window.location.href = "instagram://user?username=has9alv3";
-                setTimeout(function() {
-                window.open(instagramUrl, '_blank');
-              }, 1500);
-              } else {
-                window.open(instagramUrl, '_blank');
-              }
-            }
+  var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  var instagramUrl = "https://www.instagram.com/has9alv3/";
+
+  if (isMobile) {
+    window.location.href = "instagram://user?username=has9alv3";
+    setTimeout(function() {
+      window.open(instagramUrl, '_blank');
+    }, 1500);
+  } else {
+    window.open(instagramUrl, '_blank');
+  }
+}
 
 // For Facebook
 function redirectToFacebook() {
-            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-            var facebookUrl = "https://www.facebook.com/has9alv3";
-            if (isMobile) {
-              window.location.href = "fb://profile/100007540508074";
-              setTimeout(function() {
-              window.open(facebookUrl, '_blank');
-            }, 1500);
-            } else {
-              window.open(facebookUrl, '_blank');
-            }
-          }
+  var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  var facebookUrl = "https://www.facebook.com/has9alv3";
+
+  if (isMobile) {
+    window.location.href = "fb://profile/100007540508074";
+    setTimeout(function() {
+      window.open(facebookUrl, '_blank');
+    }, 1500);
+  } else {
+    window.open(facebookUrl, '_blank');
+  }
+}
 
 // For Twitter
 function redirectToTwitter() {
-              var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-              var twitterUrl = "https://twitter.com/has9alv3";
-              if (isMobile) {
-                window.location.href = "twitter://user?screen_name=has9alv3";
-                setTimeout(function() {
-                  window.open(twitterUrl, '_blank');
-                }, 1500);
-              } else {
-                window.open(twitterUrl, '_blank');
-              }
-            }
+  var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  var twitterUrl = "https://twitter.com/has9alv3";
+
+  if (isMobile) {
+    window.location.href = "twitter://user?screen_name=has9alv3";
+    setTimeout(function() {
+      window.open(twitterUrl, '_blank');
+    }, 1500);
+  } else {
+    window.open(twitterUrl, '_blank');
+  }
+}
+
+// For Telegram
+function redirectToTelegram() {
+  var telegramUrl = "https://t.me/has9alv3"; // Replace with your Telegram username or profile URL
+  window.open(telegramUrl, '_blank');
+}
