@@ -256,3 +256,34 @@ function redirectToTelegram() {
   var telegramUrl = "https://t.me/has9alv3"; // Replace with your Telegram username or profile URL
   window.open(telegramUrl, '_blank');
 }
+
+
+const listItems = document.querySelectorAll('.clients-item');
+
+listItems.forEach(listItem => {
+  const image = listItem.querySelector('img');
+  listItem.addEventListener('click', function() {
+    const popup = document.createElement('div');
+    popup.classList.add('popup');
+
+    const img = document.createElement('img');
+    img.src = image.src;
+    popup.appendChild(img);
+
+    const close = document.createElement('span');
+    close.innerHTML = '&times;';
+    close.classList.add('popup-close');
+    close.addEventListener('click', function() {
+      document.body.removeChild(popup);
+    });
+    popup.appendChild(close);
+
+    popup.addEventListener('click', function(event) {
+      if (event.target === this) {
+        document.body.removeChild(popup);
+      }
+    });
+
+    document.body.appendChild(popup);
+  });
+});
