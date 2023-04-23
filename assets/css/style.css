@@ -336,14 +336,14 @@ main {
 }
 
 .avatar-box {
-  background: var(--bg-gradient-onyx);
+  /* background: var(--bg-gradient-onyx); */
   border-radius: 20px;
 }
 
 .info-content .name {
   color: var(--white-2);
-  font-size: var(--fs-3);
-  font-weight: var(--fw-500);
+  font-size: var(--fs-2); /* default 3 */
+  font-weight: var(--fw-500); /* default 500 */
   letter-spacing: -0.25px;
   margin-bottom: 10px;
 }
