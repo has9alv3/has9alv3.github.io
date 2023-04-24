@@ -503,6 +503,29 @@ main {
 
 .navbar-link.active { color: var(--orange-yellow-crayola); }
 
+nav .tubelight
+{
+    position: absolute;
+    top: 0px;
+    transform: translateX(-50%);
+    height: 5px;
+    border-radius: 5px;
+    background: var(--orange-yellow-crayola);
+    transition: left 400ms ease;
+    z-index: 10;
+}
+nav .light-ray
+{
+    position: absolute;
+    left: -30%;
+    top: 5px;
+    height: 70px;
+    background: linear-gradient(to bottom,
+    rgba(255,255,255,0.3) -50%,
+    rgba(255,255,255, 0) 90%);
+    clip-path: polygon(5% 100%, 25% 0px, 75% 0px ,95% 100%);
+    pointer-events: none;
+}
 
 
 
