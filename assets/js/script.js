@@ -170,6 +170,67 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+const uls = document.querySelectorAll("nav ul");
+const links = [...document.querySelectorAll("nav button")];
+const light = document.querySelector("nav .tubelight");
+const ray = document.querySelector(".light-ray");
+let activeIndex = 0;
+let currentIndex = 0;
+let increment = 1;
+
+function resizeTubelight() {
+  const activeLink = document.querySelector('.navbar-link.active');
+  if (activeLink) {
+    light.style.width = `${activeLink.offsetWidth}px`;
+    light.style.left = `${activeLink.offsetLeft + activeLink.offsetWidth / 2}px`;
+    ray.style.width = `${activeLink.offsetWidth*1.6}px`;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  resizeTubelight();
+});
+
+window.addEventListener("load", () => {
+  resizeTubelight();
+});
+
+window.addEventListener('resize', resizeTubelight);
+
+links.forEach((link, index) =>
+{
+  if (links[index].classList.contains("active"))
+    {
+    light.style.width = `${links[index].offsetWidth}px`;
+    light.style.left = `${links[index].offsetLeft + links[index].offsetWidth/2}px`;
+        ray.style.width = `${links[index].offsetWidth*1.6}px`;
+    }
+  link.addEventListener("click", (e) =>
+    {
+    activeIndex = index;
+    let t = setInterval(() =>
+        {
+      if (activeIndex > currentIndex) increment = 1;
+      else if (activeIndex < currentIndex) increment = -1;
+      currentIndex += increment;
+
+      links[currentIndex].classList.add("active");
+      if (currentIndex != -1)
+        links[currentIndex - increment].classList.remove("active");
+
+      if (currentIndex == activeIndex)
+            {
+        e.target.classList.add("active");
+        increment = 0;
+        clearInterval(t);
+      }
+    }, 50);
+    light.style.width = `${e.target.offsetWidth}px`;
+    light.style.left = `${e.target.offsetLeft + e.target.offsetWidth/2}px`;
+        ray.style.width = `${e.target.offsetWidth*1.6}px`;
+  });
+});
+
 
 
 
@@ -287,3 +348,5 @@ listItems.forEach(listItem => {
     document.body.appendChild(popup);
   });
 });
+
+
