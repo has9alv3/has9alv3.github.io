@@ -147,6 +147,30 @@ for (let i = 0; i < formInputs.length; i++) {
   });
 }
 
+// add event to submit button
+formBtn.addEventListener("click", function (event) {
+  event.preventDefault(); // prevent default form submission behavior
+  const formData = new FormData(form);
+  const fullName = formData.get("fullname"); // replace with your field id
+  const email = formData.get("email"); // replace with your field id
+  const message = formData.get("message"); // replace with your field id
+  const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeILtZvWr_sYF686_MKoTHIUm9gAJk3UqlNz_BNvEeILy5jHQ/formResponse"; // replace with your form url
+
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", formUrl);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4) {
+      console.log("Form submitted successfully!");
+      form.reset();
+      formBtn.innerText = "Sent Successfully";
+      formBtn.setAttribute("disabled", "");
+    }
+  };
+  xhr.send(`entry.1726207689=${encodeURIComponent(fullName)}&entry.1436039049=${encodeURIComponent(email)}&entry.2060113445=${encodeURIComponent(message)}`);
+});
+
+
 
 
 // page navigation variables
