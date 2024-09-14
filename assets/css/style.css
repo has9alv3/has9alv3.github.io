@@ -324,31 +324,6 @@ main {
   overflow: hidden;
   transition: var(--transition-2);
 }
-.download-btn {
-  display: inline-flex; /* To align with the inline nature of .title */
-  align-items: center;
-  gap: 8px;
-  background-color: var(--orange-yellow-crayola);
-  color: var(--smoky-black);
-  padding: 3px 12px; /* Match padding with .title */
-  border-radius: 8px; /* Ensure border-radius matches */
-  font-size: var(--fs-8); /* Match font-size with .title */
-  font-weight: var(--fw-300); /* Match font-weight with .title */
-  text-transform: uppercase;
-  margin-top: 10px; /* Adjust if necessary */
-  box-shadow: var(--shadow-2);
-  transition: background-color var(--transition-1);
-}
-
-.download-btn:hover,
-.download-btn:focus {
-  background-color: var(--vegas-gold);
-  text-decoration: none;
-}
-
-.download-btn ion-icon {
-  font-size: 16px; /* Adjust if necessary */
-}
 
 .sidebar.active { max-height: 405px; }
 
