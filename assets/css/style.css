@@ -325,17 +325,17 @@ main {
   transition: var(--transition-2);
 }
 .download-btn {
-  display: inline-flex;
+  display: inline-flex; /* To align with the inline nature of .title */
   align-items: center;
   gap: 8px;
   background-color: var(--orange-yellow-crayola);
   color: var(--smoky-black);
-  padding: 10px 15px;
-  border-radius: 8px;
-  font-size: var(--fs-7);
-  font-weight: var(--fw-500);
+  padding: 3px 12px; /* Match padding with .title */
+  border-radius: 8px; /* Ensure border-radius matches */
+  font-size: var(--fs-8); /* Match font-size with .title */
+  font-weight: var(--fw-300); /* Match font-weight with .title */
   text-transform: uppercase;
-  margin-top: 10px;
+  margin-top: 10px; /* Adjust if necessary */
   box-shadow: var(--shadow-2);
   transition: background-color var(--transition-1);
 }
@@ -347,8 +347,9 @@ main {
 }
 
 .download-btn ion-icon {
-  font-size: 16px;
+  font-size: 16px; /* Adjust if necessary */
 }
+
 .sidebar.active { max-height: 405px; }
 
 .sidebar-info {
