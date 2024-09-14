@@ -1953,3 +1953,66 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+.cv-download-btn {
+  position: fixed; /* Fixed positioning for dynamic placement */
+  z-index: 100; /* Ensure it's above other content */
+  text-decoration: none; /* Remove underline */
+}
+
+.cv-btn {
+  display: flex; /* Align icon and text in a row */
+  align-items: center; /* Center align items vertically */
+  gap: 8px; /* Space between icon and text */
+  padding: 8px 16px; /* Button padding */
+  font-size: var(--fs-8); /* Font size */
+  color: var(--orange-yellow-crayola); /* Text color */
+  background: var(--border-gradient-onyx); /* Background color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: var(--shadow-2); /* Button shadow */
+  transition: var(--transition-1); /* Transition for hover */
+}
+
+.cv-btn ion-icon {
+  font-size: 18px; /* Icon size */
+  color: var(--orange-yellow-crayola); /* Icon color */
+}
+
+.cv-btn:hover,
+.cv-btn:focus {
+  background: var(--bg-gradient-yellow-1); /* Hover effect */
+}
+
+.cv-btn:hover::before,
+.cv-btn:focus::before {
+  background: var(--bg-gradient-yellow-2); /* Hover effect */
+}
+
+/* Case 1: Only paw icon shows */
+@media (max-width: 450px) {
+  .cv-download-btn {
+    bottom: 15px; /* Position at the bottom */
+    right: 15px; /* Position at the right */
+  }
+}
+
+/* Case 2: "Show Contacts" button shows */
+@media (min-width: 451px) and (max-width: 768px) {
+  .cv-download-btn {
+    bottom: 15px; /* Position at the bottom */
+    right: 15px; /* Position at the right */
+  }
+}
+
+/* Case 3: Sidebar is expanded */
+@media (min-width: 769px) {
+  .cv-download-btn {
+    top: 20px; /* Position at the top */
+    left: 20px; /* Position at the left */
+  }
+
+  /* Ensure proper positioning when sidebar is not expanded */
+  .sidebar:not(.active) ~ .cv-download-btn {
+    bottom: 15px; /* Position at the bottom */
+    right: 15px; /* Position at the right */
+  }
+}
