@@ -1953,3 +1953,29 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--orange-yellow-crayola);
+  color: var(--smoky-black);
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: var(--fs-7);
+  font-weight: var(--fw-500);
+  text-transform: uppercase;
+  margin-top: 10px;
+  box-shadow: var(--shadow-2);
+  transition: background-color var(--transition-1);
+}
+
+.download-btn:hover,
+.download-btn:focus {
+  background-color: var(--vegas-gold);
+  text-decoration: none;
+}
+
+.download-btn ion-icon {
+  font-size: 16px;
+}
