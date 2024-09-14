@@ -336,8 +336,11 @@ main {
 }
 
 .avatar-box {
-  /* background: var(--bg-gradient-onyx); */
-  border-radius: 20px;
+  background-color: var(--bg-gradient-jet); /* Same background color */
+  border-radius: 28%; /* Same border-radius */
+  padding: 7px; /* Same padding */
+  display: inline-block; /* Ensures the figure doesn't stretch */
+  background: var(--border-gradient-onyx);
 }
 
 .info-content .name {
