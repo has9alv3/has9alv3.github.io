@@ -335,6 +335,36 @@ main {
   gap: 15px;
 }
 
+.cv-btn {
+  display: flex; /* Align icon and text in a row */
+  align-items: center; /* Center align items vertically */
+  gap: 8px; /* Space between icon and text */
+  margin-top: 8px; /* Space above the button */
+  padding: 8px 16px; /* Button padding */
+  font-size: var(--fs-8); /* Font size */
+  color: var(--orange-yellow-crayola); /* Text color */
+  background: var(--border-gradient-onyx); /* Background color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: var(--shadow-2); /* Button shadow */
+  transition: var(--transition-1); /* Transition for hover */
+}
+
+.cv-btn ion-icon {
+  font-size: 18px; /* Icon size */
+  color: var(--orange-yellow-crayola); /* Icon color */
+}
+
+.cv-btn:hover,
+.cv-btn:focus {
+  background: var(--bg-gradient-yellow-1); /* Hover effect */
+}
+
+.cv-btn:hover::before,
+.cv-btn:focus::before {
+  background: var(--bg-gradient-yellow-2); /* Hover effect */
+}
+
+
 .avatar-box {
   /* background: var(--bg-gradient-onyx); */
   border-radius: 20px;
@@ -356,36 +386,6 @@ main {
   width: max-content;
   padding: 3px 12px;
   border-radius: 8px;
-}
-
-.info-content .cv-btn {
-  display: flex; /* Align icon and text in a row */
-  align-items: center; /* Center align items vertically */
-  gap: 8px; /* Space between icon and text */
-  margin-top: 8px; /* Space above the button */
-  padding: 8px 16px; /* Button padding */
-  font-size: var(--fs-8); /* Font size */
-  color: var(--orange-yellow-crayola); /* Text color */
-  background: var(--border-gradient-onyx); /* Background color */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: var(--shadow-2); /* Button shadow */
-  transition: var(--transition-1); /* Transition for hover */
-
-
-.cv-btn ion-icon {
-  font-size: 18px; /* Icon size */
-  color: var(--orange-yellow-crayola); /* Icon color */
-}
-
-.cv-btn:hover,
-.cv-btn:focus {
-  background: var(--bg-gradient-yellow-1); /* Hover effect */
-}
-
-.cv-btn:hover::before,
-.cv-btn:focus::before {
-  background: var(--bg-gradient-yellow-2); /* Hover effect */
-}
 }
 
 .info_more-btn {
