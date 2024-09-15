@@ -291,56 +291,58 @@ button.addEventListener("click", () => {
 
 
 
-// For Instagram
-function redirectToInstagram() {
+function redirectTo(platform) {
   var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-  var instagramUrl = "https://www.instagram.com/has9alv3/";
 
-  if (isMobile) {
-    window.location.href = "instagram://user?username=has9alv3";
+  var urls = {
+    instagram: {
+      app: "instagram://user?username=has9alv3",
+      web: "https://www.instagram.com/has9alv3/"
+    },
+    facebook: {
+      app: "fb://profile/100007540508074",
+      web: "https://www.facebook.com/has9alv3"
+    },
+    twitter: {
+      app: "twitter://user?screen_name=has9alv3",
+      web: "https://twitter.com/has9alv3"
+    },
+    telegram: {
+      web: "https://t.me/has9alv3"
+    }
+  };
+
+  var platformUrls = urls[platform];
+
+  if (isMobile && platformUrls.app) {
+    // Try to open the app
+    var appOpened = false;
+
+    // Create an invisible iframe to attempt to open the app
+    var iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
+    iframe.src = platformUrls.app;
+    document.body.appendChild(iframe);
+
+    // If the app opens, it interrupts the page's normal flow,
+    // so if we are still executing code, it means the app didn't open
     setTimeout(function() {
-      window.open(instagramUrl, '_blank');
-    }, 1500);
+      if (!appOpened) {
+        window.open(platformUrls.web, '_blank');
+      }
+      document.body.removeChild(iframe); // Clean up the iframe
+    }, 100); // Very short delay to detect failure to open the app
   } else {
-    window.open(instagramUrl, '_blank');
+    // On desktop or for Telegram, open the web link directly
+    window.open(platformUrls.web, '_blank');
   }
+
+  // Mark app as opened if the user leaves the page
+  window.addEventListener('blur', function() {
+    appOpened = true;
+  });
 }
 
-// For Facebook
-function redirectToFacebook() {
-  var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-  var facebookUrl = "https://www.facebook.com/has9alv3";
-
-  if (isMobile) {
-    window.location.href = "fb://profile/100007540508074";
-    setTimeout(function() {
-      window.open(facebookUrl, '_blank');
-    }, 1500);
-  } else {
-    window.open(facebookUrl, '_blank');
-  }
-}
-
-// For Twitter
-function redirectToTwitter() {
-  var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-  var twitterUrl = "https://twitter.com/has9alv3";
-
-  if (isMobile) {
-    window.location.href = "twitter://user?screen_name=has9alv3";
-    setTimeout(function() {
-      window.open(twitterUrl, '_blank');
-    }, 1500);
-  } else {
-    window.open(twitterUrl, '_blank');
-  }
-}
-
-// For Telegram
-function redirectToTelegram() {
-  var telegramUrl = "https://t.me/has9alv3"; // Replace with your Telegram username or profile URL
-  window.open(telegramUrl, '_blank');
-}
 
 
 const listItems = document.querySelectorAll('.clients-item');
