@@ -309,6 +309,12 @@ function redirectTo(platform) {
     },
     telegram: {
       web: "https://t.me/has9alv3"
+    },
+    linkedin: {
+      web: "https://www.linkedin.com/in/has9alv3"
+    },
+    github: {
+      web: "https://github.com/has9alv3"
     }
   };
 
@@ -333,7 +339,7 @@ function redirectTo(platform) {
       document.body.removeChild(iframe); // Clean up the iframe
     }, 100); // Very short delay to detect failure to open the app
   } else {
-    // On desktop or for Telegram, open the web link directly
+    // On desktop or platforms without app-specific URLs, open the web link directly
     window.open(platformUrls.web, '_blank');
   }
 
