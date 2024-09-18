@@ -1160,7 +1160,7 @@ nav .light-ray
 
 
 /*-----------------------------------*\
-  #PROJECT
+  #BLOG
 \*-----------------------------------*/
 
 .blog-posts { margin-bottom: 10px; }
@@ -1373,7 +1373,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
-   * #ACHIEVEMENTS, PROJECT
+   * #ACHIEVEMENTS, BLOG
    */
 
   .project-img,
@@ -1632,7 +1632,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
-   * #ACHIEVEMENTS, PROJECT
+   * #ACHIEVEMENTS, BLOG
    */
 
   .project-img, .blog-banner-box { border-radius: 16px; }
@@ -1878,7 +1878,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
-   * PROJECT
+   * BLOG
    */
 
   .blog-banner-box { height: 230px; }
